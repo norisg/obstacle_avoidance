@@ -46,7 +46,7 @@ _deps
 
 
 build/
-xcode
+xcode/
 
 [Bb][Uu][Ii][Ll][Dd]/
 .vscode/settings.json
