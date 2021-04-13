@@ -1,8 +1,8 @@
 #!/bin/bash
-
-if -d ../build
+BUILD_DIRECTORY="../build" 
+if [ ! -d "$BUILD_DIRECTORY" ]
 then
-  mkdir ../build
+  mkdir $BUILD_DIRECTORY
 fi
 
 cmake -S ../ -B ../build 
