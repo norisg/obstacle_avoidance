@@ -6,6 +6,12 @@
 using namespace cv;
 using namespace std;
 
+#ifdef LINUX
+    #define ROTATION 180
+#else
+    #define ROTATION 0
+#endif
+
 /////////////// Color Detection //////////////////////
 
 void getContours(Mat imgDil, Mat img) {
@@ -63,29 +69,30 @@ int main() {
      while (true) {
 
          cap.read(img);
-
+         
          //Rotate the image by Rotation angle
-         int Rotation = 0;
+        
+         int Rotation = ROTATION;
          int Height = img.rows / 2;//getting middle point of rows//
          int Width = img.cols / 2;//getting middle point of height//
          Mat for_Rotation = getRotationMatrix2D(Point(Width, Height), (Rotation),1);//declaring matrix for rotated image
-         Mat for_Rotated;
-         warpAffine(img, for_Rotated, for_Rotation, img.size());
+         Mat rotated180;
+         warpAffine(img, rotated180, for_Rotation, img.size());
 
          //imshow("AfterRotation", for_Rotated);//show rotated image//
 
          // Preprocessing
-         cvtColor(for_Rotated, imgGray, COLOR_BGR2GRAY);
+         cvtColor(rotated180, imgGray, COLOR_BGR2GRAY);
          GaussianBlur(imgGray, imgBlur, Size(3, 3), 3, 0);
          Canny(imgBlur, imgCanny, 25, 75);
          Mat kernel = getStructuringElement(MORPH_RECT, Size(3, 3));
          dilate(imgCanny, imgDil, kernel);
 
-         getContours(imgDil,img);
+         getContours(imgDil,rotated180);
 
 
-         imshow("Image", img);
-         waitKey(1);
+         imshow("Image", rotated180);
+         waitKey(20);
 
      }
 
