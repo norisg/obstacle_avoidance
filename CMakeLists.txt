@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.16.3)
 
 project(OBSTACLE_AVOIDANCE VERSION 0.1)
 
+set(CMAKE_CXX_STANDARD 20)
+
+
 set(TITLE "OBSTACLE AVOIDANCE")
 message(STATUS ${TITLE} " Version: " ${PROJECT_VERSION})
 
