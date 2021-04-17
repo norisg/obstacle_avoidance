@@ -6,7 +6,7 @@
 using namespace cv;
 using namespace std;
 
-#ifdef LINUX
+#ifdef __linux__
     #define ROTATION 180
 #else
     #define ROTATION 0
