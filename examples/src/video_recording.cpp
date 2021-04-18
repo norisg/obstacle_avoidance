@@ -64,7 +64,7 @@ int main (){
       video.write(rotated);
      
       // Display the resulting frame
-      imshow( "Frame", rotated );
+      //imshow( "Frame", rotated );
    
       // Press  ESC on keyboard to  exit
       char c = (char)waitKey(1);
