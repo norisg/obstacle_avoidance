@@ -58,13 +58,13 @@ int main (){
       int Height = frame.rows / 2;//getting middle point of rows//
       int Width = frame.cols / 2;//getting middle point of height//
       Mat for_Rotation = getRotationMatrix2D(Point(Width, Height), (Rotation),1);//declaring matrix for rotated image
-      Mat rotated180;
-        warpAffine(frame, rotated180, for_Rotation, frame.size());
+      Mat rotated;
+        warpAffine(frame, rotated, for_Rotation, frame.size());
       // Write the frame into the file 'outcpp.avi'
-      video.write(frame);
+      video.write(rotated);
      
       // Display the resulting frame
-      imshow( "Frame", frame );
+      imshow( "Frame", rotated );
    
       // Press  ESC on keyboard to  exit
       char c = (char)waitKey(1);
