@@ -10,6 +10,12 @@ TARGET_LINK_LIBRARIES (recognize_object ${OpenCV_LIBS})
 TARGET_LINK_LIBRARIES (video_recording ${OpenCV_LIBS})
 
 FIND_PACKAGE(WiringPi REQUIRED)
-TARGET_LINK_LIBRARIES (gpio_rpi ${WiringPi_LIBS})
+
+# Include headers
+include_directories(${WIRINGPI_INCLUDE_DIRS})
+
+# Link against libraries
+target_link_libraries(gpio_rpi ${WIRINGPI_LIBRARIES})
+target_link_libraries(gpio_rpi ${CMAKE_THREAD_LIBS_INIT})
 
 FILE(COPY Resources DESTINATION "${CMAKE_BINARY_DIR}")
