@@ -9,9 +9,9 @@ int main(int argc, char** argv)
 
     printf("wiringPi is working!\n");
     
-    softPwmCreate(14,2.5,50);
+    softPwmCreate(14,0,100);
     
-    softPwmWrite(14,2.5);
+    softPwmWrite(14,5);
     
 
     return 0;
