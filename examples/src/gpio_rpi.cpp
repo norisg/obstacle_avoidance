@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
     if(wiringPiSetupGpio()==-1)
    {
-       cout<<"Setup wiring pi failed";
+       std::cout<<"Setup wiring pi failed";
        return 1;
    }
     
