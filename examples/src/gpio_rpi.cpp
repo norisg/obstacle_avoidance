@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     {
 
     
-        pwmWrite (1, 10) ;
+        pwmWrite (14, 10) ;
         delay (10) ;
         
       
