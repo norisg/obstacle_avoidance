@@ -21,13 +21,12 @@ int main(int argc, char** argv)
         delay(5000);
         
         
-        softPwmWrite(14,11);
+        softPwmWrite(14,40);
         
-        delay(5000);
+        delay(10000);
         
         
     }
     
-
     return 0;
 }
