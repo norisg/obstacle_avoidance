@@ -18,8 +18,8 @@ int main(int argc, char** argv)
 
     
         pwmWrite (14, 10) ;
-        delay (10) ;
-        
+        delay (5000) ;
+        pwmWrite (14, 15) ;
       
         
         
