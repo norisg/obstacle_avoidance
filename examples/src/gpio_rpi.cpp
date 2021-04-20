@@ -11,7 +11,15 @@ int main(int argc, char** argv)
     
     softPwmCreate(14,0,100);
     
-    softPwmWrite(14,5);
+    
+    while(1)
+    {
+
+    
+        softPwmWrite(14,5);
+        
+        delay(5000);
+    }
     
 
     return 0;
