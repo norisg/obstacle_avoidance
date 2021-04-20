@@ -16,12 +16,12 @@ int main(int argc, char** argv)
     {
 
     
-        softPwmWrite(14,2.5);
+        softPwmWrite(14,94);
         
         delay(5000);
         
         
-        softPwmWrite(14,60);
+        softPwmWrite(14,75);
         
         delay(5000);
         
