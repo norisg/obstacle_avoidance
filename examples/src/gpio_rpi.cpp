@@ -5,7 +5,11 @@
 
 int main(int argc, char** argv)
 {
-    wiringPiSetup();
+    if(wiringPiSetupGpio()==-1)
+   {
+       cout<<"Setup wiring pi failed";
+       return 1;
+   }
     
     
 
@@ -20,11 +24,11 @@ int main(int argc, char** argv)
     {
 
     
-        softPwmWrite(14,25);
+        softPwmWrite(14,5);
         //softPwmWrite(14,195);
         delay (10000) ;
         //pwmWrite (14, 50) ;
-        softPwmWrite(14,120);
+        //softPwmWrite(14,120);
         delay (10000) ;
         
         
