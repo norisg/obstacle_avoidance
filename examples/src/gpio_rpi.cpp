@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#include <softPwm.h>
+
 
 int main(int argc, char** argv)
 {
@@ -9,21 +9,18 @@ int main(int argc, char** argv)
 
     printf("wiringPi is working!\n");
     
-    softPwmCreate(14,0,100);
+    // set pin 1 to PWM
+    pinMode (14, PWM_OUTPUT) ;
     
     
     while(1)
     {
 
     
-        softPwmWrite(14,94);
+        pwmWrite (1, 10) ;
+        delay (10) ;
         
-        delay(5000);
-        
-        
-        softPwmWrite(14,75);
-        
-        delay(5000);
+      
         
         
     }
