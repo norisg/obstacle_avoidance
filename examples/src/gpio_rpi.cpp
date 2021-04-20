@@ -26,7 +26,7 @@ int main()
             softPwmWrite(11,dutycycle);
             dutycycle = 2.5;
         }
-        delay(5000);
+        delay(5000);    
     }
     return 0;
 }
