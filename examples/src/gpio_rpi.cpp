@@ -11,6 +11,8 @@ int main(int argc, char** argv)
     
     softPwmCreate(11,2.5,50);
     
+    softPwmWrite(11,2.5);
+    
 
     return 0;
 }
